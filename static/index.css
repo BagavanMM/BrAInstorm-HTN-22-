@@ -3,7 +3,11 @@
 }
 
 p {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Karla', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 1.1px;
 }
 
 h1, h2, h3 {
@@ -55,7 +59,7 @@ h1, h2, h3 {
 }
 
 .body-container p {
-    width: 80%;
+    width: 75%;
 }
 
 .body-container span {
@@ -99,7 +103,7 @@ h1, h2, h3 {
 }
 
 .footer-container h1 {
-    font-size: 2rem;
+    font-size: 1.0rem;
     letter-spacing: 0.9px;
 }
 
@@ -107,4 +111,11 @@ h1, h2, h3 {
     font-size: 0.9rem;
     letter-spacing: 0.9px;
     margin-top: -10px; 
+}
+
+.color {
+    background: -webkit-linear-gradient(green, lightgreen);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
