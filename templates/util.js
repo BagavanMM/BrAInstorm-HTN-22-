@@ -1,4 +1,5 @@
-
+var user = JSON.parse('{{ user | tojson | safe}}');
+const brainwave = user.message;
 
 const alpha1 = ['../images/alpha1/alpha1.png', '../images/alpha1/alpha2.png', '../images/alpha1/alpha3.png']
 const beta = ['../images/beta/beta.png', '../images/beta/beta1.png']
@@ -10,3 +11,7 @@ const low_beta = ['../images/low-beta/low-beta.png','../images/low-beta/low-beta
 function rand (arr) {
     return arr[Math.floor(Math.random) * arr.length]
 }
+
+
+console.log(brainwave)
+return rand (brainwave)

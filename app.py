@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, jsonify
 import argparse
 import time
 
@@ -67,6 +67,9 @@ def result():
         brainwave = 'Theta'
     else:
         brainwave = 'Delta'
+
+    brainwave_dict = {"message": brainwave}
+
     mindfulness.release()
 
     restfulness_params = BrainFlowModelParams(BrainFlowMetrics.RESTFULNESS.value,
@@ -76,7 +79,7 @@ def result():
     print('Restfulness: %s' % str(restfulness.predict(feature_vector)))
     restfulness.release()
 
-    return render_template('results.html')
+    return render_template('results.html', user=brainwave_dict)
 
 
 if __name__ == "__main__":
