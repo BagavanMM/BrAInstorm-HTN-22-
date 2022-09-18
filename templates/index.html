@@ -7,31 +7,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Inter:wght@100;200;300;400;500;600;700;800&family=Karla:wght@300;400;500;600;700;800&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Open+Sans:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/index.css')}}" >
+    <link rel="stylesheet" href="static\index.css" >
 	</head>
 	
 	<body>
       <div class='navbar-container'>
         <div class='navbar-logo'>🧠</div>
-        <button class='navbar-login'>Login</button>
+        <a href="login"><button class='navbar-login' href="login">Login</button></a>
       </div>
       <div class='body-container'>
-        <h1 class='body-title'>Social Media and Mood: <span>Re-imagined</span></h1>
+        <h1 class='body-title'>Social Media and Mood: <span>Reimagined</span></h1>
         <p class='body-text'>
             One in ten people struggle with identifying their emotions. This brings a lifetime of frustration,
-            broken relationships, and a lack of meaning. At Br<span class="color">AI</span>nstorm, we're reimagining what emotions look 
+            broken relationships, and a lack of meaning. At BrAInstorm, we're reimagining what emotions look 
             like, and how they're interpreted. Using the latest advances in Brain-Computer Interface Technology,
-            Br<span class="color">AI</span>nstorm is fostering a new social experience for people suffering from a lack of understanding. We
+            BrAInstorm is fostering a new social experience for people suffering from a lack of understanding. We
             measure waves naturally emitted by the brain during certain states of mood, and using the power of the
             Stable Diffusion AI model, translate them into tangible manifestations of users' experience. 
         </p>
-        <button class='body-login' type="submit" class='file-submit'>Login</button>
+        <!-- <button class='body-login' type="submit" class='file-submit' href="/login">Login</button> -->
     </div>
     <footer class="footer-container">
-      <h1>Made with ❤️ in Waterloo</h1>
+      <h1>Made with ❤️ in 🇨🇦</h1>
       <h2>© 2022 </h2>
+      <!-- <button class='body-login' type="submit" href="" class='file-submit'>Submit</button> -->
+
     </footer>
 
 </html>
 
-<!-- <button class='body-login' type="submit" class='file-submit'>Login</button> -->
