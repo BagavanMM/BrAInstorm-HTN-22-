@@ -9,15 +9,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Inter:wght@100;200;300;400;500;600;700;800&family=Karla:wght@300;400;500;600;700;800&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Open+Sans:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='/results.css')}}" >
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='/index.css')}}" >
 </head>
     <body>
+        <a href="/protected_area"><button class="navbar-login">Menu</button></a>
         <div class='app-container'>
-            <h1 class="title">Your Results</h1>
-            <div id="photos">
-                <!-- INSERT DESCRIPTION HERE -->
+            <h1>Your Results</h1>
+            <div id="information" class="container-out">
+                <div id="photos">
+                    <!-- INSERT DESCRIPTION HERE -->
+                </div>
+                <div id="stats">
+                    <!-- INSERT DESCRIPTION HERE -->
+                </div>
             </div>
         </div>
+
+
+
         <script defer >
             var user = JSON.parse('{{ user | tojson | safe}}');
             const brainwave = user.message;
@@ -44,7 +53,8 @@
             // img.src = central[0][0]
             let src = document.getElementById("photos");
             src.appendChild(img);
-    
+
+            // brainwave
             console.log(brainwave);
             
         </script>

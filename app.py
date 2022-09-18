@@ -46,13 +46,13 @@ def result():
     MLModel.enable_ml_logger()
 
     params = BrainFlowInputParams()
-    params.board_id = -1
-    board_id = -1
+    params.board_id = 1
+    board_id = 1
     sampling_rate = BoardShim.get_sampling_rate(board_id)
     params = BrainFlowInputParams()
-    # params.serial_port = 'COM6'
+    params.serial_port = 'COM5'
 
-    board = BoardShim(-1, params)
+    board = BoardShim(1, params)
     master_board_id = board.get_board_id()
     sampling_rate = BoardShim.get_sampling_rate(master_board_id)
     board.prepare_session()
@@ -102,7 +102,7 @@ def result():
     print('Restfulness: %s' % str(restfulness.predict(feature_vector)))
     restfulness.release()
 
-    return render_template('results.html', user=brainwave_dict)
+    return render_template('results.html', user=brainwave_dict) # brainwave)
 
 
 # extra routing
@@ -157,8 +157,7 @@ def logout():
 def protected_area():
     data = {"username": session['name']}
     return render_template("menu.html", user=data)
-
-    return f"Hello {session['name']}! <br/> <a href='/logout'><button>Logout</button></a>"  #the logout button 
+    # return f"Hello {session['name']}! <br/> <a href='/logout'><button>Logout</button></a>"  #the logout button 
 
 
 
