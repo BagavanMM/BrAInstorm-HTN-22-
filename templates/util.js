@@ -13,5 +13,4 @@ function rand (arr) {
 }
 
 
-console.log(brainwave)
-return rand (brainwave)
+console.log(rand(brainwave))

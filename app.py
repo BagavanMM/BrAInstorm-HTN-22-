@@ -23,13 +23,13 @@ def result():
     MLModel.enable_ml_logger()
 
     params = BrainFlowInputParams()
-    params.board_id = -1
-    board_id = -1
+    params.board_id = 1
+    board_id = 1
     sampling_rate = BoardShim.get_sampling_rate(board_id)
     params = BrainFlowInputParams()
-    # params.serial_port = 'COM6'
+    params.serial_port = 'COM6'
 
-    board = BoardShim(-1, params)
+    board = BoardShim(1, params)
     master_board_id = board.get_board_id()
     sampling_rate = BoardShim.get_sampling_rate(master_board_id)
     board.prepare_session()
@@ -56,17 +56,17 @@ def result():
     print('Concentration: %s' % str(mindfulness.predict(feature_vector)))
     brainwave = ''
     if mindfulness.predict(feature_vector) > 0.916:
-        brainwave = 'Hi-Beta'
+        brainwave = 1  # hi-beta
     elif mindfulness.predict(feature_vector) > 0.833:
-        brainwave = 'Beta'
+        brainwave = 2  # beta
     elif mindfulness.predict(feature_vector) > .075:
-        brainwave = 'Lo-Beta'
+        brainwave = 3  # lo-beta
     elif mindfulness.predict(feature_vector) > 0.5:
-        brainwave = 'Alpha'
+        brainwave = 4  # alpha
     elif mindfulness.predict(feature_vector) > 0.15:
-        brainwave = 'Theta'
+        brainwave = 5  # theta
     else:
-        brainwave = 'Delta'
+        brainwave = 6  # delta
 
     brainwave_dict = {"message": brainwave}
 
