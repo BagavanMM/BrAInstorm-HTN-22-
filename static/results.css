@@ -7,9 +7,15 @@
     justify-content: center;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
-    font-size: 2rem;
+    font-size:  rem;
     background: -webkit-linear-gradient(green, lightgreen);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+#photos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

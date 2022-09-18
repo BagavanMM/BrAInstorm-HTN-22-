@@ -15,7 +15,10 @@
         <div class='app-container'>
             <h1 class="title">Your Results</h1>
             <div id="photos">
-                <!-- INSERT DESCRIPTION HERE -->
+            <div id="tags">
+            <div id='para'>
+            </div>
+            </div>
             </div>
         </div>
         <script defer >
@@ -33,6 +36,17 @@
             ['../static/images/low-beta/low-beta.png','../static/images/low-beta/low-beta1.png'], ['../static/images/alpha1/alpha1.png', '../static/images/alpha1/alpha2.png', '../static/images/alpha1/alpha3.png'], ['../static/images/theta/theta.png', '../static/images/theta/theta1.png', '../static/images/theta/theta2.png'],
             ['../static/images/delta/delta.png', '../static/images/delta/delta2.png']]
     
+            const central_tags = ['Calm, Creativity, Enhanced Ability to Absorb Information', 'Increases in Energy, Anxiety, and Performance',
+                                    'Deepest Levels of Relaxation, Restoration, Healing', "Significant Stress, Anxiety, Paranoia, High Energy",
+                                'Drowsiness, Meditation, Memory', 'Fast, Idle, Musing']
+                                
+            const central_paragraphs = ['Alpha brainwaves predominate during contemplative moods and various forms of meditation. At the moment, the power of being here is known as alpha. The brain is in a state of rest called alpha. Overall mental coordination, tranquility, attention, mind-body connection, and learning are all aided by alpha waves.',
+                                        'When our attention is focused on cognitive processes and the outside world, beta brainwaves rule our typical waking state of awareness. Beta is a "rapid" activity that occurs when we are aware, concentrating, thinking critically, making decisions, or solving problems. Three bands are further separated into beta brainwaves; You might think of Lo-Beta (Beta1, 12–15Hz) as a "rapid idle" or pondering. Beta (Beta2, 15–22Hz) is characterized by substantial involvement or active problem-solving. Hi-Beta (Beta3, 22-38Hz) is a type of mind that is highly sophisticated and integrates new experiences with high levels of anxiety or excitement. Continuous high-frequency processing consumes much energy and is not the most effective approach to power the brain.',
+                                    'Slow, loud brainwaves are called delta waves (low frequency and deeply penetrating, like a drum beat). They come into being during the most intense concentration and dreamless sleep. Delta waves suspend external awareness and are the source of empathy. Because this state promotes regeneration and repair, deep restorative sleep is crucial to healing.',
+                                    'When our attention is focused on cognitive processes and the outside world, beta brainwaves rule our typical waking state of awareness. Beta is a "rapid" activity that occurs when we are aware, concentrating, thinking critically, making decisions, or solving problems. Three bands are further separated into beta brainwaves; You might think of Lo-Beta (Beta1, 12–15Hz) as a "rapid idle" or pondering. Beta (Beta2, 15–22Hz) is characterized by substantial involvement or active problem-solving. Hi-Beta (Beta3, 22-38Hz) is a type of mind that is highly sophisticated and integrates new experiences with high levels of anxiety or excitement. Continuous high-frequency processing consumes much energy and is not the most effective approach to power the brain.',
+                                    'Theta brainwaves are predominant during intense meditation as well as sleep. Our entryway to memory, intuition and learning is theta. Our senses are disconnected from the outside environment and concentrated on impulses from within when we are in theta. It\'s that twilight condition that we often only see as we awaken or nod off to sleep. We experience vivid images, intuition, and knowledge outside the realm of our ordinary conscious consciousness while in theta. We store our "stuff" there, including our worries, complicated past, and nightmares.',
+                                    'When our attention is focused on cognitive processes and the outside world, beta brainwaves rule our typical waking state of awareness. Beta is a "rapid" activity that occurs when we are aware, concentrating, thinking critically, making decisions, or solving problems. Three bands are further separated into beta brainwaves; You might think of Lo-Beta (Beta1, 12–15Hz) as a "rapid idle" or pondering. Beta (Beta2, 15–22Hz) is characterized by substantial involvement or active problem-solving. Hi-Beta (Beta3, 22-38Hz) is a type of mind that is highly sophisticated and integrates new experiences with high levels of anxiety or excitement. Continuous high-frequency processing consumes much energy and is not the most effective approach to power the brain.']
+
             //  go into central[brainwave], return a random image, set that image to getElbyId in result
     
             function rand (array) {
@@ -44,6 +58,16 @@
             // img.src = central[0][0]
             let src = document.getElementById("photos");
             src.appendChild(img);
+
+            let tags = document.createElement('h2')
+            tags.src = central_tags[brainwave]
+            let src_2 = document.getElementById('tags')
+            src_2.appendChild(tags)
+
+            let para = document.createElement('p')
+            para.src = central_paragraphs[brainwave]
+            let src_3 = document.getElementById('para')
+            src_3.append(para)
     
             console.log(brainwave);
             
