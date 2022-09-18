@@ -54,15 +54,19 @@ def result():
     mindfulness = MLModel(mindfulness_params)
     mindfulness.prepare()
     print('Concentration: %s' % str(mindfulness.predict(feature_vector)))
-    if mindfulness.predict(feature_vector) > 0.75:
-        print("Beta")
-        print("Showing meditation image")
-    elif mindfulness.predict(feature_vector) > 0.5 < 0.75:
-        print("Alpha")
-    elif mindfulness.predict(feature_vector) > 0.25 < 0.5:
-        print("Theta")
+    brainwave = ''
+    if mindfulness.predict(feature_vector) > 0.916:
+        brainwave = 'Hi-Beta'
+    elif mindfulness.predict(feature_vector) > 0.833:
+        brainwave = 'Beta'
+    elif mindfulness.predict(feature_vector) > .075:
+        brainwave = 'Lo-Beta'
+    elif mindfulness.predict(feature_vector) > 0.5:
+        brainwave = 'Alpha'
+    elif mindfulness.predict(feature_vector) > 0.15:
+        brainwave = 'Theta'
     else:
-        print("Bro's extremely excited")
+        brainwave = 'Delta'
     mindfulness.release()
 
     restfulness_params = BrainFlowModelParams(BrainFlowMetrics.RESTFULNESS.value,
