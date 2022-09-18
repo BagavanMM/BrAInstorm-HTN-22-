@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from flask import Flask, render_template, url_for, request, jsonify, abort, redirect, session
+=======
+from flask import Flask, render_template, url_for, request, jsonify
+>>>>>>> 11c1cf7d37db099f5e7fc7e4c71e184c550ca95c
 import argparse
 import time
 
@@ -62,15 +66,22 @@ def result():
     mindfulness = MLModel(mindfulness_params)
     mindfulness.prepare()
     print('Concentration: %s' % str(mindfulness.predict(feature_vector)))
-    if mindfulness.predict(feature_vector) > 0.75:
-        print("Beta")
-        print("Showing meditation image")
-    elif mindfulness.predict(feature_vector) > 0.5 < 0.75:
-        print("Alpha")
-    elif mindfulness.predict(feature_vector) > 0.25 < 0.5:
-        print("Theta")
+    brainwave = ''
+    if mindfulness.predict(feature_vector) > 0.916:
+        brainwave = 0  # hi-beta
+    elif mindfulness.predict(feature_vector) > 0.833:
+        brainwave = 1  # beta
+    elif mindfulness.predict(feature_vector) > .075:
+        brainwave = 2  # lo-beta
+    elif mindfulness.predict(feature_vector) > 0.5:
+        brainwave = 3  # alpha
+    elif mindfulness.predict(feature_vector) > 0.15:
+        brainwave = 4  # theta
     else:
-        print("Bro's extremely excited")
+        brainwave = 5  # delta
+
+    brainwave_dict = {"message": brainwave}
+
     mindfulness.release()
 
     restfulness_params = BrainFlowModelParams(BrainFlowMetrics.RESTFULNESS.value,
@@ -80,6 +91,7 @@ def result():
     print('Restfulness: %s' % str(restfulness.predict(feature_vector)))
     restfulness.release()
 
+<<<<<<< HEAD
     return render_template(result)
 
 
@@ -152,6 +164,9 @@ def home():
 def protected_area():
     return f"Hello {session['name']}! <br/> <a href='/logout'><button>Logout</button></a>"  #the logout button 
 
+=======
+    return render_template('results.html', user=brainwave_dict)
+>>>>>>> 11c1cf7d37db099f5e7fc7e4c71e184c550ca95c
 
 
 if __name__ == "__main__":
