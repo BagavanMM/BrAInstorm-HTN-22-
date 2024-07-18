@@ -126,7 +126,7 @@ def result():
 
 # init stable diffusion
 central_tags = ["Significant Stress, Anxiety, Paranoia, High Energy", 'Increases in Energy, Anxiety, and Performance', 'Fast, Idle, Musing', 'Calm, Creativity, Enhanced Ability to Absorb Information', 4, 'Increases in Energy, Anxiety, and Performance',
-                'Drowsiness, Meditation, Memory', 'Deepest Levels of Relaxation, Restoration, Healing']
+                'Drowsiness, Meditation, Memory', 'Deepest Levels of Relaxing, Restorative, Mindfulness']
 
 pmp = central_tags[brainwave]
 model = replicate.models.get("stability-ai/stable-diffusion")
@@ -200,3 +200,5 @@ def protected_area():
 
 
 app.run(debug=True)
+
+
